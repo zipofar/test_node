@@ -1,6 +1,6 @@
 const http = require('http');
 
-const endpoint = process.env.ENDPOINT;
+const envFromDockerArg = process.env.ENV_FROM_DOCKER_ARG;
 const hostname = '127.0.0.1';
 const port = 80;
 
@@ -12,5 +12,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
-  console.log(`End point is: ${endpoint}`);
+  console.log(`ENV_FROM_DOCKER_ARG: ${envFromDockerArg}`);
 });

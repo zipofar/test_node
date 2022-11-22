@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        - DOCKER_ARG=docker_compose
+        - DOCKER_ARG=sub_docker_compose
 
 x-uffizzi:
   ingress:
