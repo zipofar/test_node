@@ -8,4 +8,6 @@ COPY . $RAILS_ROOT
 
 ENV PATH=$RAILS_ROOT/bin:${PATH}
 
-CMD /bin/bash -c "node /app/app/app.js"
+EXPOSE 8080
+
+CMD ["node", "/app/app/app.js"]

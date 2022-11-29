@@ -1,8 +1,7 @@
 const http = require('http');
 
-const endpoint = process.env.ENDPOINT;
-const hostname = '127.0.0.1';
-const port = 80;
+const hostname = '0.0.0.0';
+const port = process.env.PORT || 8080;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -11,6 +10,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-  console.log(`End point is: ${endpoint}`);
+  console.log(`Server is running on http://${hostname}:${port}`);
 });
