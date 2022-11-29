@@ -8,7 +8,8 @@ const redirectUrl = process.env.REDIRECT_URL;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  msg = `End point: ${endpointUri} | Redirect Url: ${redirectUrl}`
+  res.end(msg);
 });
 
 server.listen(port, hostname, () => {
