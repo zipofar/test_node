@@ -2,11 +2,12 @@ version: '3'
 
 services:
   app:
-    image: ttl.sh/test-node-zipofar:9h
-    entrypoint: /bin/bash
-    command:
-      - "-c"
-      - "tail /dev/zero"
+    # image: ttl.sh/c18c6432-80d4-45ce-8689-cee8a99f2a37-04:2h
+    # image: ghcr.io/hm
+    #image: unknown_nginx
+    #image: uffizzitest/test-private-repo
+    #image: elnealo.jfrog.io/uffizzi-test-docker/webhook-test-app
+    image: ttl.sh/ad182000-3e4c-4741-ba46-1389dd05e9e2ХХХ:2h
 
 x-uffizzi:
   ingress:
