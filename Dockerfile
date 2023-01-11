@@ -1,5 +1,7 @@
 FROM node:latest
 
+RUN apt update && apt install -y git vim curl stress-ng
+
 ARG RAILS_ROOT=/app
 RUN mkdir -p $RAILS_ROOT
 WORKDIR $RAILS_ROOT
