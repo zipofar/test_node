@@ -2,16 +2,14 @@ version: '3'
 
 services:
   app:
-    image: ttl.sh/test-node-zipofar:9h
-    entrypoint: /bin/bash
-    command:
-      - "-c"
-      - "REDIRECT_URL=$$UFFIZZI_URL/home ENDPOINT=$$UFFIZZI_URL/entrypoint node /app/app/app.js"
+    image: nginx:latest
+    volumes:
+      - ./.dot_nginx:/usr/share/nginx/html/dot-nginx
 
 x-uffizzi:
   ingress:
     service: app
-    port: 8080
+    port: 80
 
   continuous_preview:
-    delete_preview_after: 10h
+    delete_preview_after: 1h
