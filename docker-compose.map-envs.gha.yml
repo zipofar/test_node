@@ -12,12 +12,6 @@ x-uffizzi:
   ingress:
     service: app
     port: 8080
-    additional_subdomains:
-      - "example-1"
-      - "example-2"
-      - "example-3"
-      - "example-4"
-
 
   continuous_preview:
     delete_preview_after: 10h
