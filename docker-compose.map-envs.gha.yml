@@ -2,10 +2,16 @@ version: '3'
 
 services:
   app:
-    image: ghcr.io/zipofar/test-node:latest1
-  redis:
-    image: redis:latest1
+    image: ghcr.io/zipofar/test-node:latest
+    volumes:
+      - db_data:/var/opt/mssql
     
+  redis:
+    image: redis:latest
+
+volumes:
+  db_data:
+
 x-uffizzi:
   ingress:
     service: app
