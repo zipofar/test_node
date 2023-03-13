@@ -2,8 +2,10 @@ version: '3'
 
 services:
   app:
-    image: ghcr.io/zipofar/test-node:latest
-
+    image: ghcr.io/zipofar/test-node:latest1
+  redis:
+    image: redis:latest1
+    
 x-uffizzi:
   ingress:
     service: app
