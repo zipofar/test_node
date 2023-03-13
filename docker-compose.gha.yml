@@ -27,7 +27,7 @@ services:
 
   app:
     # image: registry.uffizzi.com/beeb713b-da02-40b3-bde4-f84742071873:24h
-    image: redis
+    image: redis:j
     deploy:
       resources:
         limits:
