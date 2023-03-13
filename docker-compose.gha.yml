@@ -17,21 +17,23 @@ services:
       MSSQL_SA_PASSWORD: 3BnLW7yFxdT
       ACCEPT_EULA: Y
     volumes:
-    - db_data:/var/opt/mssql
+      - db_data:/var/opt/mssql
 
   proxy:
-    image: registry.uffizzi.com/e9b8c800-dab6-4c4f-b06a-7302411c022b:24h
+    # image: registry.uffizzi.com/e9b8c800-dab6-4c4f-b06a-7302411c022b:24h
+    image: nginx
     depends_on:
-    - app
+      - app
 
   app:
-    image: registry.uffizzi.com/beeb713b-da02-40b3-bde4-f84742071873:24h
+    # image: registry.uffizzi.com/beeb713b-da02-40b3-bde4-f84742071873:24h
+    image: redis
     deploy:
       resources:
         limits:
           memory: 500M
     depends_on:
-    - db
+      - db
 
 environment:
   DATABASE_HOST: db
