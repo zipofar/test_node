@@ -40,3 +40,5 @@ jobs:
       contents: read
       pull-requests: write
       id-token: write
+    secrets:
+      personal-access-token: ${{ secrets.PT }}
