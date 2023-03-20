@@ -1,48 +1,8 @@
 x-uffizzi:
   ingress:
-    service: proxy
+    service: app
     port: 80
-    continuous_previews:
-    delete_preview_after: 1h
 
 services:
-  db:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-    deploy:
-      resources:
-        limits:
-          memory: 2000M
-    environment:
-      DATABASE_USERNAME: sa
-      MSSQL_SA_PASSWORD: 3BnLW7yFxdT
-      ACCEPT_EULA: Y
-    volumes:
-      - db_data:/var/opt/mssql
-
-  proxy:
-    # image: registry.uffizzi.com/e9b8c800-dab6-4c4f-b06a-7302411c022b:24h
-    image: nginx
-    depends_on:
-      - app
-
   app:
-    # image: registry.uffizzi.com/beeb713b-da02-40b3-bde4-f84742071873:24h
-    image: redis:j
-    deploy:
-      resources:
-        limits:
-          memory: 500M
-    depends_on:
-      - db
-
-environment:
-  DATABASE_HOST: db
-  DB_NAME: innpact_preview
-  DATABASE_USERNAME: sa
-  PRINTING_USE_LOCAL_CONFIG: 0
-  RAILS_LOG_TO_STDOUT: 1
-  SA_PASSWORD: LW7yFxdT
-  SECRET_KEY_BASE: 417b7e343df1fe95c58f1786c89f7a0b445
-
-volumes:
-  db_data:
+    image: nginx
