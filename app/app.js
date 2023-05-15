@@ -4,16 +4,28 @@ const hostname = '0.0.0.0';
 const port = process.env.PORT || 8080;
 const endpointUri = process.env.ENDPOINT;
 const redirectUrl = process.env.REDIRECT_URL;
+const uffizziUrl = process.env.UFFIZZI_URL;
+const uffizziDomain = process.env.UFFIZZI_DOMAIN;
+const uffizziPredictableUrl = process.env.UFFIZZI_PREDICTABLE_URL;
+
+const messages = [
+  `End point: ${endpointUri}`,
+  `Redirect Url: ${redirectUrl}`,
+  `UFFIZZI_URL: ${uffizziUrl}`,
+  `UFFIZZI_DOMAIN: ${uffizziDomain}`,
+  `UFFIZZI_PREDICTABLE_URL: ${uffizziPredictableUrl}`,
+];
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  msg = `End point: ${endpointUri} | Redirect Url: ${redirectUrl}`
-  res.end(msg);
+
+  const body = messages.join(' | ')
+
+  res.end(body);
 });
 
 server.listen(port, hostname, () => {
   console.log(`Server is running on http://${hostname}:${port}`);
-  console.log(`End point: ${endpointUri}`);
-  console.log(`Redirect url: ${redirectUrl}`);
+  messages.forEach((m) => console.log(m))
 });
