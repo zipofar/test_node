@@ -30,12 +30,12 @@ jobs:
     name: Use Remote Workflow to Preview on Uffizzi
     needs:
       - render-compose-file
-    uses: UffizziCloud/preview-action/.github/workflows/reusable.yaml@test/check_proxy_url
+    uses: UffizziCloud/preview-action/.github/workflows/reusable.yaml@v2
     if: ${{ github.event_name == 'pull_request' && github.event.action != 'closed' }}
     with:
       compose-file-cache-key: ${{ needs.render-compose-file.outputs.compose-file-cache-key }}
       compose-file-cache-path: docker-compose.map-envs.gha.yml
-      server: https://pr-1042-deployment-25279-uffizzi-platform.app.uffizzi.com
+      server: https://app.uffizzi.com
     permissions:
       contents: read
       pull-requests: write
