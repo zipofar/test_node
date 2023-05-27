@@ -1,0 +1,26 @@
+apiVersion: v2
+name: test-node
+version: 0.1.0
+kubeVersion: ">= 1.21.6-0" # https://issuetracker.google.com/issues/77503699
+description: "Test Node"
+type: application
+home: https://github.com/zipofar/test_node
+sources:
+  - https://github.com/zipofar/test_node
+dependencies:
+  - name: ingress-nginx
+    version: "~4.0.18"
+    repository: https://kubernetes.github.io/ingress-nginx
+    # condition:
+    # tags:
+    # import-values:
+    # alias:
+maintainers:
+  - name: Zipofar
+    email: zip@mail.io
+appVersion: "0.1.0"
+deprecated: false
+annotations:
+  # Use this annotation to indicate that this chart version is a pre-release.
+  # https://artifacthub.io/docs/topics/annotations/helm/
+  artifacthub.io/prerelease: "false"
