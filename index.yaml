@@ -5,13 +5,32 @@ entries:
       artifacthub.io/prerelease: "false"
     apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-05-27T19:11:05.878948882+03:00"
+    created: "2023-05-29T15:54:33.58018327+03:00"
+    description: Test Node
+    digest: a8c48d96cfc820ae14de9ad800ea3e0825fd4a16997ae8f776fd7e1da89c1efe
+    home: https://github.com/zipofar/test_node
+    kubeVersion: '>= 1.21.6-0'
+    maintainers:
+    - email: zip@mail.io
+      name: Zipofar
+    name: test-node
+    sources:
+    - https://github.com/zipofar/test_node
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/zipofar/test_node/gh-pages/test-node-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-05-29T15:54:33.577660503+03:00"
     dependencies:
     - name: ingress-nginx
       repository: https://kubernetes.github.io/ingress-nginx
       version: ~4.0.18
     description: Test Node
-    digest: f014cab957e43111351180ab666d37c6147e8725f0bc12b71cf0f7cd0d8519c8
+    digest: ddd9f6eed971ab6bb01ed4e98d7d478ad5c50ccec7907539293abcf9ac283b34
     home: https://github.com/zipofar/test_node
     kubeVersion: '>= 1.21.6-0'
     maintainers:
@@ -24,4 +43,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/zipofar/test_node/gh-pages/test-node-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-27T19:11:05.876608835+03:00"
+generated: "2023-05-29T15:54:33.575085877+03:00"
