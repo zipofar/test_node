@@ -6,7 +6,7 @@ services:
     entrypoint: /bin/bash
     command:
       - "-c"
-      - "REDIRECT_URL=$$UFFIZZI_URL/home ENDPOINT=$$UFFIZZI_URL/entrypoint_1 node /app/app/app.js"
+      - "REDIRECT_URL=$$UFFIZZI_URL/home ENDPOINT=$$UFFIZZI_URL/entrypoint_2 node /app/app/app.js"
 
 x-uffizzi:
   ingress:
