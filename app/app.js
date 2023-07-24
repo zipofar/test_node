@@ -26,6 +26,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
+  console.log('PR to map_envs');
   console.log(`Server is running on http://${hostname}:${port}`);
   messages.forEach((m) => console.log(m))
 });
