@@ -35,7 +35,7 @@ jobs:
     with:
       compose-file-cache-key: ${{ needs.render-compose-file.outputs.compose-file-cache-key }}
       compose-file-cache-path: docker-compose.map-envs.gha.yml
-      server: https://app.uffizzi.com/
+      server: https://2579-95-54-230-174.ngrok-free.app
     permissions:
       contents: read
       pull-requests: write
